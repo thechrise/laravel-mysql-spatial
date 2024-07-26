@@ -23,11 +23,11 @@
         "jmikola/geojson": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~6.5",
+        "phpunit/phpunit": "^9.3.3",
         "laravel/laravel": "^9.0||^10.0||^11.0",
-        "doctrine/dbal": "^2.5",
+        "doctrine/dbal": "^4.0",
         "laravel/browser-kit-testing": "^2.0",
-        "mockery/mockery": "^1.3"
+        "mockery/mockery": "^1.4.4"
     },
     "autoload": {
         "psr-4": {
