@@ -96,4 +96,14 @@ class Point extends Geometry
     {
         return new GeoJsonPoint([$this->getLng(), $this->getLat()]);
     }
+
+    public function toLivewire()
+    {
+        return $this->jsonSerialize()->jsonSerialize();
+    }
+
+    public static function fromLivewire($value)
+    {
+        return self::from($value);
+    }
 }
