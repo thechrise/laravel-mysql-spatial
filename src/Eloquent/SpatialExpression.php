@@ -3,10 +3,11 @@
 namespace KsquaredCoding\LaravelMysqlSpatial\Eloquent;
 
 use Illuminate\Database\Query\Expression;
+use Illuminate\Database\Grammar;
 
 class SpatialExpression extends Expression
 {
-    public function getValue(Illuminate\Database\Grammar $grammar = null)
+    public function getValue(Grammar $grammar = null)
     {
         return "ST_GeomFromText(?, ?, 'axis-order=long-lat')";
     }
