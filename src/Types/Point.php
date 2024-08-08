@@ -99,11 +99,14 @@ class Point extends Geometry
 
     public function toLivewire()
     {
-        return $this->jsonSerialize()->jsonSerialize();
+        return [
+            'type' => $this->type,
+            'coordinates' => $this->coordinates,
+        ];
     }
 
-    public static function fromLivewire($value)
+    public static function fromLivewire(array $data)
     {
-        return self::from($value);
+        return new static($data['coordinates']);
     }
 }
