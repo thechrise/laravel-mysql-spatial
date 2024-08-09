@@ -92,21 +92,18 @@ class Point extends Geometry
      *
      * @return \GeoJson\Geometry\Point
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return new GeoJsonPoint([$this->getLng(), $this->getLat()]);
     }
 
     public function toLivewire()
     {
-        return [
-            'type' => $this->type,
-            'coordinates' => $this->coordinates,
-        ];
+        return json_decode($this->toJson(), true);
     }
 
     public static function fromLivewire(array $data)
     {
-        return new static($data['coordinates']);
+        return static::fromJson($data);
     }
 }
