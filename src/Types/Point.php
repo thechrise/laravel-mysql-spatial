@@ -90,20 +90,19 @@ class Point extends Geometry
 
     /**
      * Convert to GeoJson Point that is jsonable to GeoJSON.
-     *
-     * @return \GeoJson\Geometry\Point
      */
     public function jsonSerialize(): mixed
     {
-        return new GeoJsonPoint([$this->getLng(), $this->getLat()]);
+        $b = new GeoJsonPoint([$this->getLng(), $this->getLat()]);
+        return $b->jsonSerialize();
     }
 
     public function toLivewire()
     {
-        return json_decode($this->toJson(), true);
+        return $this->jsonSerialize();
     }
 
-    public static function fromLivewire(array $data)
+    public static function fromLivewire($data)
     {
         return static::fromJson($data);
     }
