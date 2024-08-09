@@ -6,8 +6,9 @@ use GeoJson\GeoJson;
 use GeoJson\Geometry\Point as GeoJsonPoint;
 use KsquaredCoding\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException;
 use KsquaredCoding\LaravelMysqlSpatial\Types\Geometry;
+use Livewire\Wireable;
 
-class Point extends Geometry
+class Point extends Geometry implements Wireable
 {
     protected $lat;
 
