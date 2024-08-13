@@ -78,6 +78,8 @@ class Point extends Geometry implements Wireable
     {
         if (is_string($geoJson)) {
             $geoJson = GeoJson::jsonUnserialize(json_decode($geoJson));
+        } else if (is_array($geoJson)) {
+            $geoJson = GeoJson::jsonUnserialize($geoJson);
         }
 
         if (!is_a($geoJson, GeoJsonPoint::class)) {
