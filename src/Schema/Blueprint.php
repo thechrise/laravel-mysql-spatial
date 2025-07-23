@@ -7,19 +7,6 @@ use Illuminate\Database\Schema\Blueprint as IlluminateBlueprint;
 class Blueprint extends IlluminateBlueprint
 {
     /**
-     * Add a geometry column on the table.
-     *
-     * @param string   $column
-     * @param null|int $srid
-     *
-     * @return \Illuminate\Support\Fluent
-     */
-    public function geometry($column, $srid = null)
-    {
-        return $this->addColumn('geometry', $column, compact('srid'));
-    }
-
-    /**
      * Add a point column on the table.
      *
      * @param string   $column
